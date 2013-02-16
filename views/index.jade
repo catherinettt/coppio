@@ -1,0 +1,13 @@
+html
+  head
+    script(type="text/javascript", src="app/javascripts/vendor.js")
+    script(type="text/javascript", src="app/javascripts/app.js")
+    script
+      require('initialize')
+    link(rel="stylesheet", type="text/css", href="app/stylesheets/vendor.css")
+    link(rel="stylesheet", type="text/css", href="app/stylesheets/app.css")
+
+  body
+    div(kb-inject="ApplicationViewModel")
+      div(data-bind="template: 'views/header'")
+      div(data-bind="template: 'views/application'")
