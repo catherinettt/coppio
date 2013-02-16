@@ -1,8 +1,12 @@
 {
   "author": "Catherine Tan",
-  "name": "patricktan",
+  "name": "coppio",
   "version": "0.0.1",
   "homepage": "",
+  "engines": {
+    "node": "0.8.x",
+    "npm":  "1.1.x"
+  },
   "repository": {
     "type": "git",
     "url": ""
