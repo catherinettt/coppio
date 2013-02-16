@@ -1,0 +1,17 @@
+
+module.exports = class PageRouter extends Backbone.Router
+  constructor: (@page_el) ->
+    HomeViewModel = require 'view_models/home'
+    @route('', null, => @loadPage(kb.renderTemplate('views/home', new HomeViewModel())))
+
+    ProductViewModel = require 'view_models/product'
+    @route('product', null, => @loadPage(kb.renderTemplate('views/product', new ProductViewModel())))
+
+    AboutViewModel = require 'view_models/about'
+    @route('about', null, => @loadPage(kb.renderTemplate('views/about', new AboutViewModel())))
+
+  loadPage: (el) ->
+    ko.removeNode(@active_el) if @active_el # remove previous
+    return unless ((@active_el = el) and @page_el) # no new page
+    $(@page_el).append(el)
+    $(el).addClass('active')
