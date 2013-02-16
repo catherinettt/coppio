@@ -13,17 +13,17 @@
   },
   "dependencies": {
     "express" : "*",
-    "brunch": "~1.4.4",
-    "javascript-brunch": ">= 1.0 < 1.5",
-    "coffee-script-brunch": ">= 1.0 < 1.5",
+    "brunch": "*",
+    "javascript-brunch": "*",
+    "coffee-script-brunch": "*",
 
-    "css-brunch": ">= 1.0 < 1.5",
-    "stylus-brunch": ">= 1.0 < 1.5",
+    "css-brunch": "*",
+    "stylus-brunch": "*",
 
-    "jade-brunch": "~1.3.0",
+    "jade-brunch": "*",
 
-    "uglify-js-brunch": ">= 1.0 < 1.5",
-    "clean-css-brunch": ">= 1.0 < 1.5"
+    "uglify-js-brunch": "*",
+    "clean-css-brunch": "*"
   },
   "devDependencies": {
     "chai": "1.2.0",
