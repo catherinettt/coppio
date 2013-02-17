@@ -300,7 +300,7 @@ window.require.register("views/about", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<h1>Team</h1><div class="row-fluid"><div class="span3"><h3>Dev</h3><span>Dan</span><br/><span>[ dan at coppio dot com ]</span></div><div class="span3"><h3>Design</h3><span>Cat</span><br/><span>[ cat at coppio dot com ]</span></div></div><br/><p>For general inquries please email us at [ support at coppio dot com ]</p>');
+  buf.push('<br/><div class="row-fluid"><div class="span3"><h3>Dev</h3><span>Dan</span><br/><span>[ dan at coppio dot com ]</span></div><div class="span3"><h3>Design</h3><span>Cat</span><br/><span>[ cat at coppio dot com ]</span></div></div><br/><p>For general inquries please email us at [ support at coppio dot com ]</p>');
   }
   return buf.join("");
   };
