@@ -458,6 +458,7 @@ menu li:first-child {
 }
 .product {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 .mutui-gallery {
   margin-top: 20px;
@@ -465,11 +466,11 @@ menu li:first-child {
 }
 .mutui-gallery .mutui-gallery-box {
   padding: 10px;
-  width: 1340px;
+  width: 1560px;
 }
 .mutui-gallery img {
   display: inline;
-  width: 200px;
+  width: 240px;
   margin-right: 10px;
 }
 @media (max-width: 767px) {
