@@ -11,7 +11,8 @@ module.exports = class PageRouter extends Backbone.Router
     @route('about', null, => @loadPage(kb.renderTemplate('views/about', new AboutViewModel())))
 
   loadPage: (el) ->
-    ko.removeNode(@active_el) if @active_el # remove previous
+    if @active_el # remove previous
+        ko.removeNode(@active_el)
     return unless ((@active_el = el) and @page_el) # no new page
     $(@page_el).append(el)
     $(el).addClass('active')

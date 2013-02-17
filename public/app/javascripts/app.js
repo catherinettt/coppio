@@ -294,6 +294,17 @@ window.require.register("view_models/product", function(exports, require, module
   })();
   
 });
+window.require.register("views/about", function(exports, require, module) {
+  module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+  attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+  var buf = [];
+  with (locals || {}) {
+  var interp;
+  buf.push('<h1>Team</h1><div class="row-fluid"><div class="span3"><h3>Dev</h3><span>Dan</span><br/><span>[ dan at coppio dot com ]</span></div><div class="span3"><h3>Design</h3><span>Cat</span><br/><span>[ cat at coppio dot com ]</span></div></div><br/><p>For general inquries please email us at [ support at coppio dot com ]</p>');
+  }
+  return buf.join("");
+  };
+});
 window.require.register("views/application", function(exports, require, module) {
   module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
   attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -311,7 +322,7 @@ window.require.register("views/header", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div class="row-fluid"><img src="./images/coppio.png" data-bind="event: {mouseover: hoverInLogo, mouseout: hoverOutLogo}" class="logo"/><menu><li>PRODUCTS</li><li>ABOUT</li></menu></div>');
+  buf.push('<div class="row-fluid"><a href=""><img src="./images/coppio.png" data-bind="event: {mouseover: hoverInLogo, mouseout: hoverOutLogo}" class="logo"/></a><menu><li> <a href="#product">PRODUCTS</a></li><li> <a href="#about">ABOUT</a></li></menu></div>');
   }
   return buf.join("");
   };
@@ -322,6 +333,17 @@ window.require.register("views/home", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
+  }
+  return buf.join("");
+  };
+});
+window.require.register("views/product", function(exports, require, module) {
+  module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+  attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+  var buf = [];
+  with (locals || {}) {
+  var interp;
+  buf.push('<div class="product"><div class="row-fluid"><div class="span6"><img src="./images/mutui_cars/feature.jpg"/><div><h3>Mutui Car Loan Calculator</h3><p>Mutui Cars is your all-in-one car loan calculator! It is easy to use and designed for car shoppers and dealers! With Mutui Cars, you can save, edit and compare the price of each vehicles to help make that important decision.</p><a href="https://t.co/2Lg5b6np" target="_blank" class="btn btn-inverse">View on Google Play</a></div></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_cars/main.png" class="img-polaroid"/><img src="./images/mutui_cars/summary.png" class="img-polaroid"/><img src="./images/mutui_cars/list.png" class="img-polaroid"/><img src="./images/mutui_cars/calculate.png" class="img-polaroid"/><img src="./images/mutui_cars/economy.png" class="img-polaroid"/><img src="./images/mutui_cars/affordability.png" class="img-polaroid"/></div></div></div></div>');
   }
   return buf.join("");
   };

@@ -1,10 +1,11 @@
 @import 'nib'
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700|Exo:100,200,400,700');
+@import url('http://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 
 body
 	background-color: #efefef
-	font-family: 'Exo', sans-serif
+	font-family: 'Quicksand', sans-serif
 	padding: 20px
 	color: #535353
 
@@ -17,14 +18,38 @@ menu
 	margin: 0
 	margin-top: 20px
 	padding: 0
+	height: 30px
 	li
 		display: inline-block
 		margin: 10px 20px
 		font-size: 20px
-	li:hover
-		border-bottom: 1px dashed #333
-		cursor: pointer
+		color: #535353
+		a
+			color: #535353
+		a:link
+			text-decoration: none
+			color: #535353
+		a:hover
+			text-decoration: none
+			color: #535353
+			border-bottom: 1px dashed #333
+		a:active
+			border-bottom: 1px dashed #333
+	li:first-child
+		margin-left: 5px
+.product
+	margin-top: 30px
 
+.mutui-gallery
+	margin-top: 20px
+	overflow-x: scroll
+	.mutui-gallery-box
+		padding: 10px
+		width: 1340px
+	img
+		display: inline
+		width: 200px
+		margin-right: 10px
 
 @media (max-width: 767px)
 	body
