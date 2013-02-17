@@ -243,10 +243,7 @@ window.require.register("view_models/application", function(exports, require, mo
   module.exports = ApplicationViewModel = (function() {
 
     function ApplicationViewModel() {
-      _.bindAll(this, 'afterBinding');
-      $('a.upload').click(function() {
-        return $('.dropdown-menu').toggle();
-      });
+      _.bindAll(this, 'afterBinding', 'hoverInLogo', 'hoverOutLogo');
     }
 
     ApplicationViewModel.prototype.afterBinding = function(vm, el) {
@@ -258,6 +255,14 @@ window.require.register("view_models/application", function(exports, require, mo
       return Backbone.history.start({
         hashChange: true
       });
+    };
+
+    ApplicationViewModel.prototype.hoverInLogo = function() {
+      return $('.logo').attr('src', './images/coppio_blue.png');
+    };
+
+    ApplicationViewModel.prototype.hoverOutLogo = function() {
+      return $('.logo').attr('src', './images/coppio.png');
     };
 
     return ApplicationViewModel;
@@ -306,7 +311,7 @@ window.require.register("views/header", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<menu><li>PRODUCTS</li><li>ABOUT</li></menu>');
+  buf.push('<div class="row-fluid"><img src="./images/coppio.png" data-bind="event: {mouseover: hoverInLogo, mouseout: hoverOutLogo}" class="logo"/><menu><li>PRODUCTS</li><li>ABOUT</li></menu></div>');
   }
   return buf.join("");
   };
@@ -317,7 +322,6 @@ window.require.register("views/home", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div class="intro"><div class="intro-content"><h1 class="title-text">COPPIO STUDIO</h1></div></div>');
   }
   return buf.join("");
   };
