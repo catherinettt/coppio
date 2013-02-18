@@ -201,6 +201,12 @@ window.require.register("router", function(exports, require, module) {
       this.route('product', null, function() {
         return _this.loadPage(kb.renderTemplate('views/product', new ProductViewModel()));
       });
+      this.route('product/mutuicars', null, function() {
+        return _this.loadPage(kb.renderTemplate('views/product_mutui_cars', new ProductViewModel()));
+      });
+      this.route('product/mutuituition', null, function() {
+        return _this.loadPage(kb.renderTemplate('views/product_mutui_tuition', new ProductViewModel()));
+      });
       AboutViewModel = require('view_models/about');
       this.route('about', null, function() {
         return _this.loadPage(kb.renderTemplate('views/about', new AboutViewModel()));
@@ -265,6 +271,10 @@ window.require.register("view_models/application", function(exports, require, mo
       return $('.logo').attr('src', './images/coppio.png');
     };
 
+    ApplicationViewModel.prototype.showProduct = function() {
+      return this.product(true);
+    };
+
     return ApplicationViewModel;
 
   })();
@@ -311,7 +321,7 @@ window.require.register("views/application", function(exports, require, module) 
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div id="pages"></div>');
+  buf.push('<div id="pages" class="container-fluid"></div>');
   }
   return buf.join("");
   };
@@ -322,7 +332,7 @@ window.require.register("views/header", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div class="row-fluid"><a href=""><img src="./images/coppio.png" data-bind="event: {mouseover: hoverInLogo, mouseout: hoverOutLogo}" class="logo"/></a><menu><li> <a href="#product">PRODUCTS</a></li><li> <a href="#about">ABOUT</a></li></menu></div>');
+  buf.push('<div class="container-fluid"><div class="row-fluid"><a href="" class="span6"><img src="./images/coppio.png" data-bind="event: {mouseover: hoverInLogo, mouseout: hoverOutLogo}" class="logo"/></a><div class="span6"><menu class="row-fluid"><li> <a href="#product">PRODUCTS</a></li><li> <a href="#about">ABOUT</a></li></menu></div></div></div>');
   }
   return buf.join("");
   };
@@ -343,7 +353,29 @@ window.require.register("views/product", function(exports, require, module) {
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div class="product"><div class="row-fluid"><div class="span6"><img src="./images/mutui_cars/feature.jpg"/><div><br/><p>Mutui Cars is your all-in-one car loan calculator! It is easy to use and designed for car shoppers and dealers! With Mutui Cars, you can save, edit and compare the price of each vehicles to help make that important decision.</p><a href="https://t.co/2Lg5b6np" target="_blank" class="btn btn-inverse">View on Google Play</a></div></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_cars/main.png" class="img-polaroid"/><img src="./images/mutui_cars/summary.png" class="img-polaroid"/><img src="./images/mutui_cars/list.png" class="img-polaroid"/><img src="./images/mutui_cars/calculate.png" class="img-polaroid"/><img src="./images/mutui_cars/economy.png" class="img-polaroid"/><img src="./images/mutui_cars/affordability.png" class="img-polaroid"/></div></div></div></div>');
+  buf.push('<div class="product"><div class="row-fluid"><div class="span3"><a href="#product/mutuicars"><img src="./images/mutui_cars/ic_launcher.png"/></a></div><div class="span3"><a href="#product/mutuituition"><img src="./images/mutui_tuition/ic_launcher.png"/></a></div></div></div>');
+  }
+  return buf.join("");
+  };
+});
+window.require.register("views/product_mutui_cars", function(exports, require, module) {
+  module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+  attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+  var buf = [];
+  with (locals || {}) {
+  var interp;
+  buf.push('<div class="row-fluid"><div class="span6"><img src="./images/mutui_cars/feature.jpg"/><div><br/><p>Mutui Cars is your all-in-one car loan calculator! It is easy to use and designed for car shoppers and dealers! With Mutui Cars, you can save, edit and compare the price of each vehicles to help make that important decision.</p><a href="https://t.co/2Lg5b6np" target="_blank" class="pull-right btn btn-inverse">View on Google Play</a></div></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_cars/main.png" class="img-polaroid"/><img src="./images/mutui_cars/summary.png" class="img-polaroid"/><img src="./images/mutui_cars/list.png" class="img-polaroid"/><img src="./images/mutui_cars/calculate.png" class="img-polaroid"/><img src="./images/mutui_cars/economy.png" class="img-polaroid"/><img src="./images/mutui_cars/affordability.png" class="img-polaroid"/></div></div></div>');
+  }
+  return buf.join("");
+  };
+});
+window.require.register("views/product_mutui_tuition", function(exports, require, module) {
+  module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+  attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+  var buf = [];
+  with (locals || {}) {
+  var interp;
+  buf.push('<div class="row-fluid"><div class="span6"><img src="./images/mutui_tuition/feature.png"/><a href="https://t.co/2Lg5b6np" target="_blank" class="btn pull-right btn-inverse">View on Google Play</a></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_tuition/title.png" class="img-polaroid"/><img src="./images/mutui_tuition/main.png" class="img-polaroid"/></div></div></div>');
   }
   return buf.join("");
   };

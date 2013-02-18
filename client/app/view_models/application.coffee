@@ -17,3 +17,6 @@ module.exports = class ApplicationViewModel
 
   hoverOutLogo: ->
     $('.logo').attr('src', './images/coppio.png')
+
+  showProduct: ->
+    @product(true)

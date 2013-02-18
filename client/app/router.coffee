@@ -6,6 +6,8 @@ module.exports = class PageRouter extends Backbone.Router
 
     ProductViewModel = require 'view_models/product'
     @route('product', null, => @loadPage(kb.renderTemplate('views/product', new ProductViewModel())))
+    @route('product/mutuicars', null, => @loadPage(kb.renderTemplate('views/product_mutui_cars', new ProductViewModel())))
+    @route('product/mutuituition', null, => @loadPage(kb.renderTemplate('views/product_mutui_tuition', new ProductViewModel())))
 
     AboutViewModel = require 'view_models/about'
     @route('about', null, => @loadPage(kb.renderTemplate('views/about', new AboutViewModel())))
