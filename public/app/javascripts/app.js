@@ -375,7 +375,7 @@ window.require.register("views/product_mutui_tuition", function(exports, require
   var buf = [];
   with (locals || {}) {
   var interp;
-  buf.push('<div class="row-fluid"><div class="span6"><img src="./images/mutui_tuition/feature.png"/><a href="https://t.co/2Lg5b6np" target="_blank" class="btn pull-right btn-inverse">View on Google Play</a></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_tuition/title.png" class="img-polaroid"/><img src="./images/mutui_tuition/main.png" class="img-polaroid"/></div></div></div>');
+  buf.push('<div class="row-fluid"><div class="span6"><img src="./images/mutui_tuition/feature.png"/><a href="https://play.google.com/store/apps/details?id=com.coppio.tuition" target="_blank" class="btn pull-right btn-inverse">View on Google Play</a></div><div class="span6 mutui-gallery"><div class="mutui-gallery-box"><img src="./images/mutui_tuition/title.png" class="img-polaroid"/><img src="./images/mutui_tuition/main.png" class="img-polaroid"/></div></div></div>');
   }
   return buf.join("");
   };
